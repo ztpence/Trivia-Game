@@ -1,7 +1,12 @@
 
 // Need a few Variables 
 
-
+$("#button").on("click", function(startGame) {
+    console.log("Start has Happended")
+    
+  });
+  
+  
 
 // Need an array to house trivia questions
 // Need to have sub array for possible answers and write question and correct answer
@@ -11,7 +16,7 @@ var triviaQuestions = [
 
     {
         question1: "1) What is the water way that connects the Great Lakes and the Atlantic Ocean?",
-        answers: ["St Lawrence River", "Mississippi River", "Connectucut River", "Snake River","Potomic River"],
+        answers: ["St. Lawrence River", "Mississippi River", "Connecticut River", "Snake River","Potomic River"],
         correctAnswer: "St Lawrence River"
     },
 
