@@ -3,8 +3,7 @@
 
 $("#button").on("click", function(startGame) {
     console.log("Start has Happended")
-    
-  });
+});
   
   
 
@@ -41,7 +40,7 @@ var triviaQuestions = [
     {
         question5: "5) What is the tallest mountain in the U.S.",
         answers: ["Mt. Denali", "Mt. Whitney", "Mt. Rainier", "Mt. Bear","Mt. Hubbard"],
-        correctAnswer: "Mt. Denali"
+        correctAnswer: "Mt. Denali" 
     },
 
     {
@@ -53,16 +52,26 @@ var triviaQuestions = [
 ]
 
 console.log(triviaQuestions)
-//Need a way to select questions from array and diplay on page. Maybe a for loop with function 
+//Need a way to select questions from array and diplay on page. Maybe a for loop within a for loop for answers(loop 1 questions then loop one answer set and so on )
+//Maybe with function 
 //or a method with array postion to pull
+for (var i = 0; i < triviaQuestions.length; i++) {
+    $("#trivia-question").text("<h3>" + triviaQestions[i].question + "</2>");
+        for (var x = 0; x < triviaQuestions[i].answers.length; x++) {
+            $("#trivia-question").text("<input type='radio' name='question" + i + "value='" + triviaQuestions[i]);
 
+    }
+}
 
 // Game function by pressig button on first screen
-// Then questions will apper with counter
-// could use for loop maybe with html manipulation
+// Then questions will appear with counter
+// could use for loop maybe with html manipulation to display questions and ansers to select
+// The buttons used in example are radio buttons more html manipulation
+
+//Better yet use Saterday's examples of creating html tags out of thin air with jquery 
 
 //need to create a way of keeping track of correct answers an incorrect answers
-//maybe if else statements to keep track of ansowers and an empty array to push them into 
+//maybe if else statements to keep track of ansewers and an empty array to push them into 
 //need to display this text and that will be end of the game
 //Maybe have a resart function if time allows 
 
