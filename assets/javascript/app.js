@@ -56,10 +56,10 @@ console.log(triviaQuestions)
 //Maybe with function 
 //or a method with array postion to pull
 for (var i = 0; i < triviaQuestions.length; i++) {
-    $("#trivia-question").text("<h3>" + triviaQestions[i].question + "</2>");
+    $("#trivia-question").text("<h3>" + triviaQuestions[i].question + "</h3>");
         for (var x = 0; x < triviaQuestions[i].answers.length; x++) {
             $("#trivia-question").text("<input type='radio' name='question" + i + "value='" + triviaQuestions[i]);
-
+    console.log("for loop operation")
     }
 }
 
