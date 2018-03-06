@@ -1,10 +1,6 @@
 
 // Need a few Variables 
-// Game function by pressig button on first screen
-$("#button").on("click", function() {
-    gamePlay.startGame();
-    console.log("Start has Happended")
-});
+
   
   
 
@@ -54,10 +50,18 @@ var triviaQuestions = [
 
 console.log(triviaQuestions)
 
+// Game function by pressig button on first screen
+$("#button").on("click", function() {
+    gamePlay.startGame();
+    console.log("Start has Happended")
+});
+
+
+
 //Maybe with function 
 //or a method with array postion to pull
 var gamePlay = {
-    counter:30,
+    counter:5,
     correct: 0,
     incorrect:0,
     timedown: function(){
@@ -65,13 +69,22 @@ var gamePlay = {
         $("#counter").text(gamePlay.counter);
 
         if (gamePlay.counter === 0) {
-           console.log("time is up");
+            console.log("time is up");
+            //gamePlay.gameOver() to end trivia and timer
+            
+           
         }
+       
+   
+
     },
 //Need a way to select questions from array and diplay on page. Maybe a for loop within a for loop for answers(loop 1 questions then loop one answer set and so on )
 // need start game function
 startGame: function(){
     clock = setInterval(gamePlay.timedown, 1000);
+
+    
+    $('.jumbotron').remove();
 
 // The buttons used in example are radio buttons more html manipulation
 // Then questions will appear with counter
@@ -85,8 +98,18 @@ startGame: function(){
              console.log("for loop operation")
             }
         }
-    }
-}
+        $("#trivia-question").append("button id='done-button'>Done</button>");
+    },
+    gameOver: function() {
+
+
+        
+      },  
+    resultsPage: function() {
+
+       
+      },
+};
 
 
 
