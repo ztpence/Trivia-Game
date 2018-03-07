@@ -48,20 +48,23 @@ var triviaQuestions = [
      
 ];
 
-console.log(triviaQuestions)
+console.log(triviaQuestions[0].correctAnswer)
 
 // Game function by pressig button on first screen
 $("#button").on("click", function() {
     gamePlay.startGame();
     console.log("Start has Happended")
 });
+$(document).on("click", function() {
+    gamePlay.gameOver();
+  });
 
 
 
 //Maybe with function 
 //or a method with array postion to pull
 var gamePlay = {
-    counter:5,
+    counter:30,
     correct: 0,
     incorrect:0,
     timedown: function(){
@@ -93,9 +96,7 @@ startGame: function(){
 
   for (var i = 0; i < triviaQuestions.length; i++) {
       $("#trivia-question").append("<h3>" + triviaQuestions[i].question + "</h3>");
-        
-      
-      for (var x = 0; x < triviaQuestions[i].answers.length; x++) {
+        for (var x = 0; x < triviaQuestions[i].answers.length; x++) {
             var y = $("#trivia-question");
             console.log(y);
             y.append("<input type=\"radio\" name=\"question\" value=\"\" >" + triviaQuestions[i].answers[x] + "</input>");
@@ -103,17 +104,34 @@ startGame: function(){
 
             }
         }
-        $("#trivia-question").append("<button id='done-button'>Done</button>");
+        $("#trivia-answer").append("<button id='done-button'>Done</button>");
     },
     gameOver: function() {
-
+        // The rest goes something like this   *******could not get it to work
+       // $("question").on("click", function(){  *******could not get it to work
+               //if $(this).val() === triviaQuestion[0].correctAnswer{
+                    //gamePlay.correct++;
+               //} else {
+                    //gamePlay.incorrect++;
+               //}
+       //}
+    
 
         
       },  
     resultsPage: function() {
-
+        
+        clearInterval(clock);
+                //******pretty sure below would have worked if above function was working */
+        
+        y.html('<h2>All Done!</h2>');
+        y.append('<h3>Correct Answers: ' + this.correct + '</h3>');
+        y.append('<h3>Incorrect Answers: ' + this.incorrect + '</h3>');
+        y.append('<h3>Unanswered: ' + (triviaQuestions.length - (this.incorrect + this.correct)) + '</h3>');
+      }
+            
        
-      },
+    
 };
 
 
