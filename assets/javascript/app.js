@@ -93,12 +93,17 @@ startGame: function(){
 
   for (var i = 0; i < triviaQuestions.length; i++) {
       $("#trivia-question").append("<h3>" + triviaQuestions[i].question + "</h3>");
-        for (var x = 0; x < triviaQuestions[i].answers.length; x++) {
-            $("#trivia-answer").append("<input type='radio' name='question" + '"value= >' + triviaQuestions[i].answers[x]);
-             console.log("for loop operation")
+        
+      
+      for (var x = 0; x < triviaQuestions[i].answers.length; x++) {
+            var y = $("#trivia-question");
+            console.log(y);
+            y.append("<input type=\"radio\" name=\"question\" value=\"\" >" + triviaQuestions[i].answers[x] + "</input>");
+            
+
             }
         }
-        $("#trivia-question").append("button id='done-button'>Done</button>");
+        $("#trivia-question").append("<button id='done-button'>Done</button>");
     },
     gameOver: function() {
 
